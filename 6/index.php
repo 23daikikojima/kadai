@@ -33,32 +33,28 @@
             <span class="section-title__yellow">News</span><span class="section-title-ja text-center">お知らせ・更新情報</span>
         </h2>
         <article class="news-detail">
+        <a href="news.php">
             
+            <dl class="clearfix">
                 <?php
 $pdo = new PDO("mysql:host=localhost;dbname=cs_academy;charset=utf8", "root", "dktky18");
 $sql = "SELECT * FROM news";
-// $sql = "SELECT name FROM enq";
-// $sql = "SELECT name, email FROM enq";
-// s$sql = "SELECT * FROM enq where id = 1";
-// $sql = "SELECT * FROM enq LIMIT 3";
-// $sql = "SELECT * FROM enq ORDER BY id DESC";
+$sql = "SELECT * FROM news LIMIT 5";
 $stmt = $pdo->prepare($sql);
 $stmt->execute();
 $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
-
 foreach($results as $row) {
-    echo $row["news_id"];
-    echo $row["news_title"];
-    echo $row["news_detail"];
-    echo $row["show_flg"];
-    echo $row["author"];
-    echo $row["create_date"];
-    echo $row["update_date"];
-    echo "<hr>";
-}
-$pdo = null;
-?>
+                echo'<dt class="news-date">'.$row["create_date"].'</dt>';
+                echo '<dd class="news-description"><a href="news.php?news_id=' . $row["news_id"] . '">' .mb_substr($row["news_title"],0,10)."...". '</a>';
+                echo "<hr>";
+                } 
+                $pdo = null;
+                ?> 
                 
+            </dl>
+                
+
+            </a>
             <p class="view-detail text-right"><a href="#">ニュース一覧を見る</a></p>
         </article>
     </section>
@@ -193,5 +189,7 @@ $pdo = null;
     </section>
     <!--end #information-->
 <p class="btn-pageTop"><a href="#"><img src="img/btn-pagetop.png" alt=""></a></p>
+
+
 </body>
 </html>
