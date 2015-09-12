@@ -15,18 +15,20 @@
         <h2 class="section-title text-center">
             <span class="section-title__yellow">News</span></h2>
         <div class="text-center">
+            <dl class="clearfix">
             <?php
+$news_id = $_GET["news_id"];
 $pdo = new PDO("mysql:host=localhost;dbname=cs_academy;charset=utf8", "root", "dktky18");
-$sql = "SELECT * FROM news";
+$sql = "SELECT * FROM news where news_id = $news_id";
 $stmt = $pdo->prepare($sql);
 $stmt->execute();
 $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-$news_id=$_GET["news_id"];
-$news_detail=$_GET["news_detail"];
-$sql = "SELECT * FROM news_list where news_id = " .$news_id;
-$sql ="SELECT * FROM news_list where news_detail = ".$news_detail;
+echo ($results[0]["news_title"]);
+echo "<hr>";
+echo ($results[0]["news_detail"]);
 ?>
+</dl>
         </div>
         </article>
     </section>

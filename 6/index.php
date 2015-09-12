@@ -36,20 +36,28 @@
         <a href="news.php">
             
             <dl class="clearfix">
-                <?php
+                <div id = "data">
+<?php
+$counter=0;
+$defLoad=5;
 $pdo = new PDO("mysql:host=localhost;dbname=cs_academy;charset=utf8", "root", "dktky18");
 $sql = "SELECT * FROM news";
-$sql = "SELECT * FROM news LIMIT 5";
 $stmt = $pdo->prepare($sql);
 $stmt->execute();
 $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+
 foreach($results as $row) {
+    if($counter < $defLoad){
                 echo'<dt class="news-date">'.$row["create_date"].'</dt>';
                 echo '<dd class="news-description"><a href="news.php?news_id=' . $row["news_id"] . '">' .mb_substr($row["news_title"],0,10)."...". '</a>';
                 echo "<hr>";
-                } 
+                } else{break;}
+                $counter++;
+            }
                 $pdo = null;
                 ?> 
+                </div>
                 
             </dl>
                 
@@ -187,8 +195,8 @@ foreach($results as $row) {
 くれぐれも間違ってデジタルハリウッドにお問い合わせすることのないようにご注意ください。</p>
         </div>
     </section>
-    <!--end #information-->
 <p class="btn-pageTop"><a href="#"><img src="img/btn-pagetop.png" alt=""></a></p>
+
 
 
 </body>
