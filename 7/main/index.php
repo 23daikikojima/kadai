@@ -42,7 +42,7 @@
 $counter=0;
 $defLoad=5;
 $pdo = new PDO("mysql:host=localhost;dbname=cs_academy;charset=utf8", "root", "");
-$sql = "SELECT * FROM news";
+$sql = "SELECT * FROM news where show_flg = 1";
 $stmt = $pdo->prepare($sql);
 $stmt->execute();
 $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
@@ -60,10 +60,9 @@ foreach($results as $row) {
                 </div>
                 
             </dl>
-                <form action="login_execute.php" method="get">
-    <button>ログイン</button>
-</form>
-
+            <form action="../admin/login.php">
+                <button>ログイン</button>
+            </form>
             </a>
             <p class="view-detail text-right"><a href="#">ニュース一覧を見る</a></p>
         </article>

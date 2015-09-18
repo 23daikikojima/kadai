@@ -1,6 +1,6 @@
 <?php
 $pdo = new PDO("mysql:host=localhost;dbname=cs_academy;charset=utf8", "root", "");
-$sql = "SELECT * FROM enq";
+$sql = "SELECT * FROM news";
 $stmt = $pdo->prepare($sql);
 $stmt->execute();
 $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
@@ -13,8 +13,8 @@ $view .= "<table>";
 foreach($results as $row) {
 //	var_dump($row);
 	$view .= "<tr>";
-	$view .= "<td><a href=update.php?id=" . $row["id"] . ">" . $row["id"] . "</a></td>";
-	$view .=  "<td><a href=update.php?id=" . $row["id"] . ">" . $row["name"] . "</a></td>";
+	$view .= "<td><a href=update.php?id=" . $row["news_id"] . ">" . $row["news_title"] . "</a></td>";
+	$view .=  "<td><a href=update.php?id=" . $row["news_id"] . ">" . $row["news_detail"] . "</a></td>";
 	$view .= "</tr>";
 }
 // table閉じタグで終了

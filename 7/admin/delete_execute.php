@@ -2,7 +2,7 @@
 $id = $_POST["id"];
 
 $pdo = new PDO("mysql:host=localhost;dbname=cs_academy;charset=utf8", "root", "");
-$sql = "DELETE FROM enq WHERE id = " . $id;
+$sql = "DELETE FROM news WHERE id = " . $id;
 var_dump($sql);
 $stmt = $pdo->prepare($sql);
 $result = $stmt->execute();

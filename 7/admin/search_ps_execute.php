@@ -2,7 +2,7 @@
 $id = $_GET["id"];
 $pdo = new PDO("mysql:host=localhost;dbname=cs_academy;charset=utf8", "root", "");
 // id を直接代入せず、:idを入れる
-$sql = "SELECT * FROM enq WHERE id = :id";
+$sql = "SELECT * FROM news WHERE id = :id";
 $stmt = $pdo->prepare($sql);
 $stmt->bindValue(':id', $id, PDO::PARAM_INT);
 $stmt->execute();

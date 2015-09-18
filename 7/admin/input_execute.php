@@ -1,11 +1,17 @@
 <?php
-$name = $_POST["name"];
-$email = $_POST["email"];
-$age = $_POST["age"];
+session_start();
+
+if(!isset($_SESSION["login"])){
+	header("Location: login.php");
+}
+
+
+$news_title = $_POST["news_title"];
+$news_detail = $_POST["news_detail"];
 
 $pdo = new PDO("mysql:host=localhost;dbname=cs_academy;charset=utf8", "root", "");
-$sql = "INSERT INTO enq (id, name, email, age, create_date, update_date) 
-VALUES (NULL, '" . $name . "', '" . $email . "', " . $age . ", sysdate(), sysdate()) ";
+$sql = "INSERT INTO news (news_id, news_title, news_detail, create_date, update_date) 
+VALUES (NULL, '" . $news_title . "', '" . $news_detail . "', sysdate(), sysdate()) ";
 var_dump($sql);
 $stmt = $pdo->prepare($sql);
 $result = $stmt->execute();
