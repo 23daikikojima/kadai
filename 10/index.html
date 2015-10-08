@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <meta property="og:title" content="Milkcocoaで作ったリアルタイムチャット" />
+    <meta property="og:type" content="chat" />
+    <meta property="og:description" content="BaaS（Milkcocoa）で作られたリアルタイムチャット" />
+    <title>LINE風チャット</title>
+    <link rel="stylesheet" href="style.css" type="text/css" />
+    <script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <script src="http://cdn.mlkcca.com/v2.0.0/milkcocoa.js"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script type="text/javascript" src="translate.js"></script>
+</head>
+
+<body>
+    <div class="header">
+        <h1 class="logo">LINE風チャット
+    </div>
+
+    <div class="container">
+        <div class="postarea cf">
+
+            <div class="postarea-text">
+                <p>
+                <textarea name="" id="content" cols="30" rows="10" placeholder="内容はこちら"></textarea>
+                </p>
+                <button type="button" id="translate" class="postarea-button">翻訳する</button>
+                <p>
+                <textarea name="" id="encontent" cols="30" rows="10" placeholder="内容はこちら"></textarea>
+                </p>
+            </div>
+            <p>
+            <div class="name-text">
+                <input type="text" name="" id="name" cols="30" rows="10" placeholder="名前">
+            </div>
+            </p>
+            <div class="post">
+            <button id="post" class="postarea-button">送信する</button>
+            </div>
+
+            <div class="delete">
+            <button id="delete" class="postarea-button">削除</button>
+            </div>
+        </div>
+
+    </div>
+
+    <div id="messages" class="content">
+        <div id="dummy"></div>
+    </div>
+</body>
+</html>
