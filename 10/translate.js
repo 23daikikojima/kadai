@@ -23,11 +23,10 @@ $(function() {
         });
 
         $('#content').keydown(function (e) {
-            if ((ev.which && ev.which === 13) || (ev.keyCode && ev.keyCode === 13)) {
-            return false;
-        } else {
-            return true;
-        }
+            if (e.which == 13){
+                post();
+                return false;
+            }
         });
 
         $("#name").keydown(function (e) {
