@@ -1,0 +1,103 @@
+body{
+    margin: 0;
+    color: #333333;
+    font-size: 14px;
+    font-family: 'Meiryo';
+    line-height: 130%;
+    letter-spacing: 2px;
+    text-align: center;
+    background: linear-gradient(190deg, #26f08f, #2287ea);
+    background-size: 400% 400%;
+
+    -webkit-animation: AnimationName 46s ease infinite;
+    -moz-animation: AnimationName 46s ease infinite;
+    animation: AnimationName 46s ease infinite;
+}
+@-webkit-keyframes AnimationName {
+    0%{background-position:53% 0%}
+    50%{background-position:48% 100%}
+    100%{background-position:53% 0%}
+}
+@-moz-keyframes AnimationName {
+    0%{background-position:53% 0%}
+    50%{background-position:48% 100%}
+    100%{background-position:53% 0%}
+}
+@keyframes AnimationName { 
+    0%{background-position:53% 0%}
+    50%{background-position:48% 100%}
+    100%{background-position:53% 0%}
+}
+
+a {
+    color: #DFDFDF;
+    text-decoration: none;
+}
+
+.map {
+    margin: 20px auto;
+    width: 900px;
+    height: 600px;
+    background-color: #ffffff;
+    border: 1px solid #efefef;
+    box-sizing: border-box;
+}
+
+.top {
+    color:#DFDFDF;
+}
+
+header {
+    height: 100px;
+    padding: 20px;
+}
+.header-text{
+    padding-top:30px;
+}
+h1 {
+    margin: 0;
+    color: #DFDFDF;
+    letter-spacing: 8px;
+}
+h2 {
+    color: #f9aa33;
+    padding-bottom: 5px;
+    border-bottom: 1px dashed #efefef;
+}
+
+footer{
+    color:#DFDFDF;
+    padding-bottom: 30px;
+}
+
+table {
+    text-align: left;
+    border-collapse: collapse;
+}
+
+td, th {
+    border: 1px solid #cccccc;
+    padding: 3px;
+}
+
+th {
+    background-color: #efefef;
+}
+.left {
+    float: left;
+    margin-right: 10px;
+}
+
+.left img {
+    padding: 2px;
+    border: solid 1px #cccccc;
+}
+
+.left span {
+    font-size: 75%;
+}
+
+
+
+
+
